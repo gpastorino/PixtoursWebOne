@@ -22,23 +22,9 @@ const PORT  = process.env.PORT || 3000;
 //middleware:
 app.use(bodyParser.json());  //this is for our request.body
 
-// app.use(
-//         session({
-//           //to store session in the database
-//           store: new MongoStore({ url: process.env.MONGO_URI }), 
-//           secret: process.env.SESSION_SECRET, 
-//           resave: false, 
-//           saveUninitialized: false, //this is so we only create a session if a property has been added to the session.. 
-//           cookie: {
-//           maxAge: 1000 * 60 * 60 * 24 * 7 * 2 //Expire in 2 weeks
-//           }
-//         })
-//       );
 
-// app.get('/', (req, res)=> res.send('Hello World!'));
-
-app.use('api/v1/comment', routes.commentPostRoutes);
-app.use('api/v1/blog', routes.blogPostRoutes);
+app.use('api/v1/comment', routes.comment);
+app.use('api/v1/blog', routes.blog);
 
 
 

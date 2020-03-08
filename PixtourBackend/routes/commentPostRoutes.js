@@ -8,20 +8,22 @@ const controllers = require('../controllers');
 // router.get('/', controllers.commentPost.index);
 
 
-//show:
-router.get('/:id', controllers.commentPost.show);
-
 
 //create:
-router.post('/', controllers.commentPost.create);
+router.post('/', controllers.comment.create);
+
+
+//show:
+router.get('/:id', controllers.comment.show);
+
 
 
 
 //update:
-router.put('/:id', controllers.commentPost.update);
+router.put('/:id', controllers.comment.update);
 //destroy:
 
-router.delete('/:id', controllers.commentPost.delete)
+router.delete('/:id', controllers.comment.destroy)
 
 
 

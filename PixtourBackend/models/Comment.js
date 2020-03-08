@@ -15,10 +15,7 @@ createdAt: {
         type: Date, 
         default: Date.now,
 }, 
-// image: {
-//         type: String,
-//         default: '',
-// }
+
 });
 
 const Comment = mongoose.model('Comment', CommentSchema);

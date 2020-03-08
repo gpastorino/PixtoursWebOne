@@ -2,14 +2,14 @@ const db = require('../models');
 
 //index posts -- query to filter by author, etc. 
 const index = (request, response) => {
-        db.Post.find(request.query, (error, foundPosts) => {
+        db.Blog.find(request.query, (error, foundBlog) => {
                 if (error) return response.status(500).json({
                         status: 500, 
                         message: error
                 });
                 response.status(200).json({
                         status: 200, 
-                        data: foundPosts
+                        data: foundBlog
                 });
         });
 };
@@ -17,13 +17,13 @@ const index = (request, response) => {
 // Show post:
 
 const show = (request, response) => {
-        db.Post.findById(request.params.id, (error, foundPost)=>{
+        db.Blog.findById(request.params.id, (error, foundBlog)=>{
                 if(error) return response.status(500).json({
                         status: 500,
                 });
                 response.status(200).json({
                         status: 200, 
-                        data: foundPost
+                        data: foundBlog
                 });
         });
 };
@@ -31,17 +31,17 @@ const show = (request, response) => {
 // Create Posts:
 
 const create = (request, response) => {
-        const newPost =request.body;
+        const newBlog = request.body;
         // newPost.authorId = request.session.currentUser.id;
         console.log(request.body)
-        db.Post.create(newPost, (error, savedPost) =>{
+        db.Blog.create(newBlog, (error, savedBlog) =>{
                 if (error) return response.status(500).json({
                         status:500,
                         message:error
                 });
                 response.status(200).json({
                         status: 200, 
-                        data: savedPost
+                        data: savedBlog
                 });
         });
 };
@@ -49,14 +49,14 @@ const create = (request, response) => {
 //update post:
 
 const update = (request, response) => {
-        db.Post.findByIdAndUpdate(request.params.id, request.body, {new:true }, (error, updatedPost) => {
+        db.Blog.findByIdAndUpdate(request.params.id, request.body, {new:true }, (error, updatedBlog) => {
                 if(error) return response.status(500).json({
                         status: 500, 
                         message: error
                 });
                 response.status(200).json({
                         status:200,
-                        data: updatedPost
+                        data: updatedBlog
                 });
         });
 
@@ -65,14 +65,14 @@ const update = (request, response) => {
 //destroy a blog post:
 
 const destroy = (response, request) => {
-        db.Post.findByIdAndDelete(request.params.id, (error, deletedPost) => {
+        db.Blog.findByIdAndDelete(request.params.id, (error, deletedBlog) => {
                 if(error) return response.status(500).json({
                         status: 500, 
                         message: error
                 });
                 response.status(200).json({
                         status: 200, 
-                        data: deletedPost
+                        data: deletedBlog
                 });
         });
 };

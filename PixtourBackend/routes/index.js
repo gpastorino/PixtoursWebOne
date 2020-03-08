@@ -1,6 +1,6 @@
 module.exports = {
         blog: require('./blogPostRoutes'),
-        // comment: require('./commentPostRoutes'),
+        comment: require('./commentPostRoutes'),
 }
 
 

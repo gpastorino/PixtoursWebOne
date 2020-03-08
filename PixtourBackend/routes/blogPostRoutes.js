@@ -14,14 +14,12 @@ router.post('/', controllers.blog.create);
 
 router.get('/:id', controllers.blog.show);
 
-//show async refactor..?
-
-
 // update:
 
 router.put('/:id', controllers.blog.update);
 
-
+// delete blog:
+router.delete('/:id', controllers.blog.destroy);
 
 module.exports= router;
 

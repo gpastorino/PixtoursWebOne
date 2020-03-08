@@ -18,10 +18,7 @@ createdAt: {
         type: Date, 
         default: Date.now,
 }, 
-// image: {
-//         type: String,
-//         default: '',
-// }
+
 });
 
 const Blog = mongoose.model('Blog', BlogSchema);
