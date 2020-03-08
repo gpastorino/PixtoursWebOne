@@ -7,22 +7,18 @@ const controllers = require('../controllers');
 
 // router.get('/', controllers.commentPost.index);
 
-//create:
-
-router.post('/', controllers.commentPost.create);
 
 //show:
-
 router.get('/:id', controllers.commentPost.show);
 
-//show async... ?
+
+//create:
+router.post('/', controllers.commentPost.create);
 
 
 
 //update:
-
 router.put('/:id', controllers.commentPost.update);
-
 //destroy:
 
 router.delete('/:id', controllers.commentPost.delete)
