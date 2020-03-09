@@ -7,8 +7,6 @@
         /* box-sizing: border-box;   has to do with padding.  border padding will not increase the overall width of the element.  if we dont want to add to the width of the element.  we can do this.  we're pushing the internal content, as opposed to growing the element.   */
     }
 
-    
-    
     /* LAYOUT
     *****************************************/
     .container {
@@ -32,7 +30,8 @@
         max-width: 1570px;
         /* max-width: 600px; */
         padding: 5%;
-        position: relative;
+        /* position: relative; */
+        
         top: 30%;
         left: 10%;
     }   

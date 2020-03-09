@@ -49,7 +49,12 @@ const create = (request, response) => {
 //update post:
 
 const update = (request, response) => {
-        db.Blog.findByIdAndUpdate(request.params.id, request.body, {new:true }, (error, updatedBlog) => {
+        db.Blog.findByIdAndUpdate(
+                request.params.id, 
+                request.body, 
+                {new:true }, 
+                
+                (error, updatedBlog) => {
                 if(error) return response.status(500).json({
                         status: 500, 
                         message: error
@@ -64,12 +69,17 @@ const update = (request, response) => {
 
 //destroy a blog post:
 
-const destroy = (response, request) => {
+const destroy = (request, response) => {
         db.Blog.findByIdAndDelete(request.params.id, (error, deletedBlog) => {
-                if(error) return response.status(500).json({
+                if(error) {
+                        return response
+                        .status(500)
+                        .json({
                         status: 500, 
-                        message: error
-                });
+                        message: "Something went terribly wrong!", error: error
+                        });
+                        
+                }
                 response.status(200).json({
                         status: 200, 
                         data: deletedBlog

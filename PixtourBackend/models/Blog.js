@@ -7,10 +7,6 @@ title: {
 author: {
         type: String,
 }, 
-authorID: {
-        type: mongoose.Schema.Types.ObjectId, 
-        ref: 'User'
-}, 
 content: {
         type: String, 
 }, 
@@ -18,7 +14,37 @@ createdAt: {
         type: Date, 
         default: Date.now,
 }, 
+comments:[{
+        content: {
+                type: String, 
+        }, 
+        createdAt: {
+                type: Date, 
+                default: Date.now,
+        }
+}]
 
 });
 
 const Blog = mongoose.model('Blog', BlogSchema);
+module.exports = Blog;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//for after auth needed:  
+
+// authorID: {
+//         type: mongoose.Schema.Types.ObjectId, 
+//         ref: 'User'
+// }, 

@@ -24,9 +24,9 @@ app.use(bodyParser.json());  //this is for our request.body
 
 
 // this worked!
-app.use('/api/v1/', function(request, response){
-        response.send('HELLO');
-})
+// app.use('/api/v1/', function(request, response){
+//         response.send('HELLO');
+// })
 
 
 app.use('/api/v1/comment', routes.comment);
