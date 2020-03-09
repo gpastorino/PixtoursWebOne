@@ -6,61 +6,9 @@
         box-sizing: border-box;
         /* box-sizing: border-box;   has to do with padding.  border padding will not increase the overall width of the element.  if we dont want to add to the width of the element.  we can do this.  we're pushing the internal content, as opposed to growing the element.   */
     }
-    
-    body {
-        display: flex;  
-        flex-direction: column;
-        /*  this switches us back to the way it was */
-        justify-content: space-between; 
-        min-height: 100vh;
-        /* organize css like html.  same order.  *
-    }
-    
-    header {
-        /* background-color: crimson; */
-        width: 100%;
-        background: rgba(0,0,0,0.7); 
-        /* red green blue and alpha for opacity */
-        position: fixed;    /*static is default. fixed makes it never move even when we scroll .. This also got rid of the nav adjustment.  */   
-        top: 0; 
-        z-index: 2;
 
-    }
-    nav {
-        padding:  5px; 
-        /* this padding adds padding above and below the nav text. */
-        
-    }
     
-    .navbar {
-        display: flex;     
-        justify-content: center;
-        list-style: none;
-    }
     
-    .nav-item {
-        padding: 20px;
-        color: #ffffff;  
-        /* black is #000000; */
-        font-size: 18px;
-    }
-    
-    .nav-link {
-    /*could have used the <a> but using the nav link class connects directly every time we need it */
-        color: #ffffff;
-        text-decoration: none;  
-        /* */
-    
-    }
-    .nav-link:hover {
-        /*this is a pseudostate-  change a pointer to an arrow or viceversa */
-        color: #fff;
-        padding-bottom: 10px;
-        /* this could have been padding or padding bottom:  the padding bottom made the line under the text to be exactly the length of the text */
-        border-bottom: 4px solid #fff;
-        /*we're combining descriptions here */
-    
-    }
     /* LAYOUT
     *****************************************/
     .container {
@@ -70,17 +18,18 @@
     }
     
     .hero {
-        background-image: url('../images/bg-hero.jpg');
-        background-position:top center;
+        background-image: url('../images/Longspace2.jpg');
+        /* background-position:top center; */
         background-repeat: no-repeat;
         background-size: cover;
-        width:100vw;
-        height: 100vh;
+        width:100%;
+        height: 5870px;
+
     }
     
     .title {
         background-color: rgba(0, 0, 0, 0.6);
-        max-width: 100%;
+        max-width: 1570px;
         /* max-width: 600px; */
         padding: 5%;
         position: relative;
@@ -89,7 +38,6 @@
     }   
     
     h1 {
-    
         font-size: 60px;
         color: white;
         line-height: 1.2;  
@@ -97,29 +45,41 @@
      
         /* how much space is between each of the lines.  typography-  golden ratio*/
     }
-    
     title p {
     /*used the parent seletor for titles in the paragraph . only one paragraph here.  we could go with just the paragraph tag.  if someone does add more content in the future though.  only styling the paragraph inside the style class.*/
     font-size: 24px;
-    letter-spacing: 
-    font-color: white; 
-    
-    
     }
 
     /*FOOTER SECTION
     ************************************************/
     
     
-    footer {
+    /* footer {
         background-color: #000;
         width: 100%;
         padding: 40px 20px;
         font-size: 18px;
         color: #ffffff;
         text-align: center;
-    }
+    } */
 
     #title {
         color: white;
     }
+
+
+    /* this paralax thing is hard to use:  
+
+    .parallax {
+        /* The image used */
+        /* background-image: url("bg-hero1.jpg"); */
+      /* background-color: white; */
+        /* Set a specific height */
+        /* height: 500px; */
+      
+        /* Create the parallax scrolling effect */
+        /* background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      } */
