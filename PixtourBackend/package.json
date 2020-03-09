@@ -1,0 +1,30 @@
+{
+  "name": "pixtourbackend",
+  "version": "1.0.0",
+  "description": "Mongodb, Express, and Node",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gpastorino/PixtoursWebOne.git"
+  },
+  "keywords": [
+    "Pixtours"
+  ],
+  "author": "Gustav Pastorino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gpastorino/PixtoursWebOne/issues"
+  },
+  "homepage": "https://github.com/gpastorino/PixtoursWebOne#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.3",
+    "mongoose-connect": "0.0.3"
+  }
+}
