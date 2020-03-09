@@ -43,7 +43,7 @@ const update = (request, response) => {
                 });
                 response.status(200).json({
                         status: 200, 
-                        data: updatePost
+                        data: updatedComment
                 });
         });
 };

@@ -23,8 +23,14 @@ const PORT  = process.env.PORT || 3000;
 app.use(bodyParser.json());  //this is for our request.body
 
 
-app.use('api/v1/comment', routes.comment);
-app.use('api/v1/blog', routes.blog);
+// this worked!
+app.use('/api/v1/', function(request, response){
+        response.send('HELLO');
+})
+
+
+app.use('/api/v1/comment', routes.comment);
+app.use('/api/v1/blog', routes.blog);
 
 
 

@@ -3,27 +3,32 @@ const router = express.Router();
 const controllers = require('../controllers');
 
 
+
+//  '/api/ goes in front of each of these.  
+
 //index
 
-// router.get('/', controllers.commentPost.index);
+router.get('/blog',  (request, response) => {
+response.send('HELLO 2');
+});
 
+//show:
+// router.get('/comment/:id', (request, response)=>{
+       
+// });
+// router.get('/comment/:id', controllers.comment.show);
 
 
 //create:
-router.post('/', controllers.comment.create);
-
-
-//show:
-router.get('/:id', controllers.comment.show);
-
-
+router.post('/comment/create', controllers.comment.create);
 
 
 //update:
-router.put('/:id', controllers.comment.update);
+router.put('/comment/:id', controllers.comment.update);
+
 //destroy:
 
-router.delete('/:id', controllers.comment.destroy)
+router.delete('/comment/:id', controllers.comment.destroy)
 
 
 
