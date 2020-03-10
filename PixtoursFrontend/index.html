@@ -21,19 +21,18 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
                 <a class="navbar-brand" href="#">Homebase</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                        <span class="navbar-toggler-icon"></span>
                 </button>
         
                 <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                <!-- <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a> -->
-                </li>
+                        <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                </li>
 
-                <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-                </li>
-                </ul>
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">About</a>
+                                </li>
+                        </ul>
 
                 </div>
         </nav>
@@ -49,20 +48,20 @@
                                                                 <div class="col-xs-4">
                                                                         <div class="input-group">
                                                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                                                <input id="email" type="text" class="form-control" name="author" placeholder="my alias">
+                                                                                <input id="author" type="text" class="form-control" name="author" placeholder="my alias">
                                                                         </div>
                                                                         <div class="input-group">
                                                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                                                <input id="email" type="text" class="form-control" name="title" placeholder="blog title">
+                                                                                <input id="title" type="text" class="form-control" name="title" placeholder="blog title">
                                                                         </div>
 
-
-                                                                        <textarea class="form-control" id="blogcontent" rows="10"></textarea>
+                                                                        <textarea class="form-control" id="blogcontent" name="content" rows="10"></textarea>
                                                                 </div>
                                                         </div>
+                                                        <button id="blogSubmit" class="btn btn-primary">Submit Blog Post</button>
                                                 </form>
                                         </div>
-                                        <button class="btn btn-primary">Submit Blog Post</button>
+                                        
                                 </div>
                         </div>
 
@@ -91,7 +90,7 @@
 
                                         <div class="input-group">
                                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                                <input id="email" type="text" class="form-control" name="author" placeholder="my alias">
+                                                <input id="commentAuthor" type="text" class="form-control" name="commentAuthor" placeholder="my alias">
                                         </div>
 
                                         <div class="commentform">

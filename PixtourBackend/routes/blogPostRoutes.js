@@ -17,7 +17,7 @@ router.get('/', controllers.blog.index);
 
 //create:
 
-router.post('/', controllers.blog.create);
+router.post('/create', controllers.blog.create);
 
 //show:
 

@@ -16,7 +16,7 @@ const routes = require('./routes');
 
 //configuration variable:  
 //heroku port, and local port:  
-const PORT  = process.env.PORT || 3000;
+const PORT  = process.env.PORT;
 
 
 //middleware:
@@ -24,9 +24,12 @@ app.use(bodyParser.json());  //this is for our request.body
 
 
 // this worked!
-// app.use('/api/v1/', function(request, response){
-//         response.send('HELLO');
-// })
+app.get('/', function(request, response){
+        response.sendfile('../PixtoursFrontend/index.html', {
+                root: __dirname
+        })
+        
+})
 
 
 app.use('/api/v1/comment', routes.comment);
