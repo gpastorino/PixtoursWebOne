@@ -25,7 +25,7 @@ app.use(bodyParser.json());  //this is for our request.body
 
 // this worked!
 app.get('/', function(request, response){
-        response.sendfile('../PixtoursFrontend/index.html', {
+        response.sendFile('views/index.html', {
                 root: __dirname
         })
         
