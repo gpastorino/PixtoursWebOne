@@ -28,14 +28,35 @@ const show = (request, response) => {
           });
       };
 
+
+//does this need to be modified so that the comment is added under the blog?  
+
+
 const create = (request, response) => {
         const newComment = request.body;
-        db.Comment.create(newComment, (error, createdComment) => {
+
+        // how would i add this to the blog part? 
+
+
+        db.Blog.findById(request.params.id, (error, foundBlog) => {
+                if(error) {
+                        return response.error(500, 'Something went wrong. Please try again.');
+                }
+                db.Comment.create(newComment, (error, createdComment) => {
                         if(error) {
                                 return response.error(500, 'Something went wrong. Please try again.');
                         }
+                        foundBlog.comments.push(createdComment._id);
+                        foundBlog.save();
+                        // console.log(foundBlog.comments)
                         response.success(200, createdComment);
                 });
+        })
+
+
+
+
+        
         };
 
 

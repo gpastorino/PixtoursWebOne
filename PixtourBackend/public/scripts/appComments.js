@@ -72,7 +72,84 @@ fetch('http://localhost:4000/api/v1/blog/5e6934df8f8556a5301a8944', {
 .catch(err => console.log(err));
 
 
+const commentForm = document.getElementById('commentForm');
 
-// https://mrfrontend.org/2017/10/javascript-basics-select-one-or-multiple-html-elements/
+commentForm.addEventListener('submit', (event) =>{
 
+        event.preventDefault();
+
+        const authorInput = document.getElementById('commentAuthor');
+        const contentInput = document.getElementById('commentContent');
+
+        //creating object to send over to the server:
+
+        const newComment = {
+                author: authorInput.value, 
+                content:  contentInput.value
+        };
+
+        console.log(newComment);
+
+
+        let id = '5e6934df8f8556a5301a8944';
+
+        fetch(`http://localhost:4000/api/v1/blog/${id}/create`, {
+                method: 'POST',
+        // fetch(`http://localhost:4000/api/v1/blog/${id}/`, {
+        //         method: 'PUT',
+                headers: {
+                        'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(newComment),
+        })
+        .then((response) => response.json())
+        .then((data)=> console.log(data))
+        .catch((err)=> console.log(err));
+});
+
+
+
+//original==========================================================================
+
+// const commentForm = document.getElementById('commentForm');
+
+// commentForm.addEventListener('submit', (event) =>{
+
+//         event.preventDefault();
+
+//         const authorInput = document.getElementById('commentAuthor');
+//         const contentInput = document.getElementById('commentContent');
+
+//         //creating object to send over to the server:
+
+//         const newComment = {
+//                 author: authorInput.value, 
+//                 content:  contentInput.value
+//         };
+
+//         console.log(newComment);
+
+
+        
+//         fetch('http://localhost:4000/api/v1/comment/create', {
+//                 method: 'POST',
+//                 headers: {
+//                         'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify(newComment),
+//         })
+//         .then((response) => response.json())
+//         .then((data)=> console.log(data))
+//         .catch((err)=> console.log(err));
+
+// });
+
+
+//how to link this to the Blog post?
+//needs to be associated to the blog id
+
+
+// https://stackoverflow.com/questions/46118666/node-js-blog-post-add-comment-not-working
+// building a blog with node:
+// https://medium.com/@andrewhartnett/tutorial-building-a-simple-blog-with-node-express-mongo-8e760630db74
 
