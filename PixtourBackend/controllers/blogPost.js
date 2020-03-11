@@ -16,8 +16,12 @@ const index = (request, response) => {
 
 // Show post:
 
+//the populate here populates all of the comments by id from the blog post.  
+
 const show = (request, response) => {
-        db.Blog.findById(request.params.id, (error, foundBlog)=>{
+        db.Blog.findById(request.params.id)
+        .populate('comments')
+        .exec((error, foundBlog)=>{
                 if(error) return response.status(500).json({
                         status: 500,
                 });

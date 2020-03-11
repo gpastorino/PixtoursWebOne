@@ -11,12 +11,16 @@ const API = 'http://localhost:4000/';
 
 // How would i get the info from the title to get the ID of the blog post? 
 
+//need the id of the div.  each div will need a unique id.
+
+//how to populate a unique id for a specific div, and then to access the content from that div. 
+
 
 
 
 
 //get blog posts onto page on loads
-fetch('http://localhost:4000/api/v1/blog/5e6684c4b2636e5bc84fed67', {
+fetch('http://localhost:4000/api/v1/blog/5e6934df8f8556a5301a8944', {
 
 
 // fetch(`http://localhost:4000/api/v1/blog/${:id}`, {
@@ -46,19 +50,22 @@ fetch('http://localhost:4000/api/v1/blog/5e6684c4b2636e5bc84fed67', {
                                         </div>`;
                 secondCol.appendChild(blogPostCard);
 
+                //checking that the post.comments works:  
 
-
-
-                let idOfComment = document.getElementById('comments');
-
-                let commentOnBlog = document.createElement('div');
-                commentOnBlog.innerHTML =       `<div class="card-body">
-                                                        <p class="card-text">${post.comment.content}</p>
-                                                        <p class="card-text" id="commentauthor">By ${post.comment.author}</p>
-                                                        <button type="button" class="btn btn-secondary">Edit Comment</button>
-                                                        <button type="button" class="btn btn-danger">Destroy Comment</button>
-                                                </div>`;
-                idOfContent.appendChild(commentOnBlog);
+                let commentsArray = post.comments;
+                let idOfComment = document.getElementById('commentsPost');
+                
+                commentsArray.forEach(comment => {
+                        console.log(comment)
+                        let commentOnBlog = document.createElement('div');
+                        commentOnBlog.innerHTML =       `<div class="card-body">
+                                                                <p class="card-text">${comment.content}</p>
+                                                                <p class="card-text" id="commentauthor">By ${comment.author}</p>
+                                                                <button type="button" class="btn btn-secondary">Edit Comment</button>
+                                                                <button type="button" class="btn btn-danger">Destroy Comment</button>
+                                                        </div>`;
+                        idOfComment.appendChild(commentOnBlog);
+                })
 
         
 })
