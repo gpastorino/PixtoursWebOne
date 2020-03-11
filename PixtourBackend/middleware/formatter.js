@@ -11,7 +11,7 @@ module.exports = (request, response, next) => {
             data: data,
             length: data.length,
             requestedAt: new Date().toLocaleString(),
-            message: 'Hello class!'
+            message: 'Thank you for your Comment!'
           };
           this.status(statusCode).json(responseObj);
         };

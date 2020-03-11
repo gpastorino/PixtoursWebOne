@@ -4,14 +4,14 @@ const controllers = require('../controllers');
 
 
 
-//  '/api/ goes in front of each of these.  
+//  /api/ goes in front of each of these.  
 
 //index
 
+router.get('/', controllers.comment.index);
+
 //show:
-// router.get('/:id', (request, response)=>{
-//         response.send('HELLO 2');
-// });
+
 router.get('/:id', controllers.comment.show);
 
 
@@ -19,17 +19,13 @@ router.get('/:id', controllers.comment.show);
 router.post('/create', controllers.comment.create);
         
 
-
 //associate comment with blog post id here
 
-router.post('/')
-
-
-
-
+// router.post('/')
 
 
 //update:
+
 router.put('/:id', controllers.comment.update);
 
 //destroy:

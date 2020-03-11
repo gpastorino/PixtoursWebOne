@@ -43,10 +43,6 @@ app.use('/', routes.views);
 
 
 
-
-
-
-
 //server public directory:  
 //this is to have access to the public forlder for the views:
 

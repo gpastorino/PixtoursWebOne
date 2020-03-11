@@ -1,26 +1,28 @@
-const form = document.getElementById('blogForm');
+// const form = document.getElementById('commentForm');
+
+
+// const form = document.getElementById('blogForm');
+
 const API = 'http://localhost:4000/';
 
 
 
 //get blog posts onto page on loads
-fetch('http://localhost:4000/api/v1/blog/', {
+fetch('http://localhost:4000/api/v1/blog/5e6684c4b2636e5bc84fed67', {
         method: 'GET'
 }).then((response) => response.json())
 .then(data => {
         console.log(data);
 
-        let postArray = data.data;
+        let post = data.data;
 
         //this is for the count:
-        let numCallbackRuns = 0;
-        postArray.forEach(post => {
-                numCallbackRuns++
-                let secondCol = document.querySelectorAll('.col-sm')[1];
+              let secondCol = document.getElementById('blog');
                 
                 let blogPostCard = document.createElement('div');
                 blogPostCard.innerHTML =  `<div class="jumbotron">
-                                                <h1 class="display-3">Blog Entry # ${numCallbackRuns}</h1>
+
+
                                                 <p id="blogTitle">${post.title}</p>
                                                 <p id="blogAuthor">${post.author}</p>
                                                 <p id="blogContent">${post.content}</p>
@@ -31,6 +33,12 @@ fetch('http://localhost:4000/api/v1/blog/', {
                                                 <p class="lead"></p>
                                         </div>`;
                 secondCol.appendChild(blogPostCard);
-        })
+        
 })
 .catch(err => console.log(err));
+
+
+
+// https://mrfrontend.org/2017/10/javascript-basics-select-one-or-multiple-html-elements/
+
+

@@ -1,22 +1,49 @@
 const db = require('../models');
 
 
+//to get a list of all of the comments:  
 
-//The Original:  
+// const index = (request, response) => {
+//         db.Comment.find({})
+//           .populate('comments')
+//           .exec((error, allComments) => {
+//             if (error) {
+//               return response.error(500, 'Something went wrong. Please try again.');
+//             }
+//             response.success(200, allComments);
+//           });
+//       };
 
-//show post
-// const show = (request, response) => {
-//         db.Comment.findById(request.params.id, (error, foundComment) => {
-//                 if(error) return response.status(500).json({
-//                         status: 500,
+
+const index = (request, response) => {
+        db.Comment.find(request.query, (error, foundComment) => {
+                if (error) return response.status(500).json({
+                        status: 500, 
+                        message: error
+                });
+                response.status(200).json({
+                        status: 200, 
+                        data: foundComment
+                });
+        });
+};
+
+// const index = (request, response) => {
+//         db.Blog.find(request.query, (error, foundBlog) => {
+//                 if (error) return response.status(500).json({
+//                         status: 500, 
 //                         message: error
 //                 });
 //                 response.status(200).json({
-//                         status:200,
-//                         data: foundComment
+//                         status: 200, 
+//                         data: foundBlog
 //                 });
 //         });
 // };
+
+
+
+
 
 
 //This is what will be used to associate the comments to the blog post:  
@@ -42,36 +69,6 @@ const create = (request, response) => {
                 });
         };
 
-        // const create = (request, response) => {
-        //         db.Trainer.create(request.body, (error, createdTrainer) => {
-        //           if (error) {
-        //             return response.error(500, 'Something went wrong. Please try again.');
-        //           }
-        //           response.success(200, createdTrainer);
-        //         });
-        //       };
-
-
-
-
-
-
-
-//         db.Comment.create(newComment, (error, savedComment)=> {
-                
-//         .populate('comments')
-//         .exec((error, foundComment)) => {
-//         db.Comment.create(newComment, (error, savedComment) => {
-//                 if(error) return response.status(500).json({
-//                         status: 500,
-//                         message: error
-//                 });
-//                 response.success(200).json({
-//                         status: 200,
-//                         data: savedComment
-//                 });
-//         }
-// }
 
 // https://alexanderzeitler.com/articles/mongoose-referencing-schema-in-properties-and-arrays/
 
@@ -87,29 +84,6 @@ const create = (request, response) => {
 
 
 
-
-
-//Create posts
-
-// const create = (request, response) => {
-
-//         const newComment = request.body;
-
-//         // newPost.authorId = request.session.currentUser.id;
-//         console.log(request.body)
-//         console.log(newComment)
-
-//         db.Comment.create(newComment, (error, savedComment) => {
-//                 if(error) return response.status(500).json({
-//                         status: 500,
-//                         message: error
-//                 });
-//                 response.status(200).json({
-//                         status: 200,
-//                         data: savedComment
-//                 });
-//         });
-// };
 
 //update/edit posts:
 const update = (request, response) => {
@@ -140,28 +114,9 @@ const destroy = (request, response) => {
 };
 
 module.exports = {
-        // index,
+        index,
         show,
         create,
         update,
         destroy
       }
-
-
-
-
-
-
-
-
-
-// const index = (request, response) => {
-//         db.Trainer.find({})
-//           .populate('caughtPokemon')
-//           .exec((error, allTrainers) => {
-//             if (error) {
-//               return response.error(500, 'Something went wrong. Please try again.');
-//             }
-//             response.success(200, allTrainers);
-//           });
-//       };
