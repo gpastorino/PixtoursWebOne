@@ -37,7 +37,14 @@ app.use(formatter);
 
 //view routes:
 //this is to show the view of the website html:  
+//this is also to reach the individual posted blog and comments area
+
 app.use('/', routes.views);
+
+
+
+
+
 
 
 //server public directory:  

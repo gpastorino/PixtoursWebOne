@@ -30,8 +30,9 @@ fetch('http://localhost:4000/api/v1/blog/', {
                                                 <p id="blogAuthor">${post.author}</p>
                                                 <p id="blogContent">${post.content}</p>
                                                 <hr class="my-4">
-                                                <button type="button" class="btn btn-secondary">Edit Blog Post</button>
                                                 <button type="button" class="btn btn-danger">Destroy Blog Post</button>
+                                                <button type="button" class="btn btn-secondary">Edit Blog Post</button>
+                                                <button id="blogSubmit" class="btn btn-primary">Comment</button>
                                                 <p class="lead"></p>
                                         </div>`;
                 secondCol.appendChild(blogPostCard);
@@ -39,6 +40,14 @@ fetch('http://localhost:4000/api/v1/blog/', {
 })
 .catch(err => console.log(err));
 
+
+
+
+
+// for new page:  
+// move edit button and destroy button into a new page.  
+// a button to view comments and add comments. 
+// 
 
 
 

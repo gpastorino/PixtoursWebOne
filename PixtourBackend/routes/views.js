@@ -13,5 +13,9 @@ router.get('/', (request, response) => {
         response.sendFile(path.join(__dirname, '../views/index.html')); 
 })
 
+router.get('/comments', (request, response) => {
+        response.sendFile(path.join(__dirname, '../views/comments/comments.html'));
+})
+
 
 module.exports = router;
