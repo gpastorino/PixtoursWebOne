@@ -15,16 +15,8 @@ createdAt: {
         default: Date.now,
 }, 
 comments:[{
-        author: {
-                type: String,
-        },
-        content: {
-                type: String, 
-        }, 
-        createdAt: {
-                type: Date, 
-                default: Date.now,
-        }
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comment'
 }]
 
 });
@@ -51,3 +43,20 @@ module.exports = Blog;
 //         type: mongoose.Schema.Types.ObjectId, 
 //         ref: 'User'
 // }, 
+
+
+
+
+
+//this is a method without using the referenced Schema:  
+
+// author: {
+//         type: String,
+// },
+// content: {
+//         type: String, 
+// }, 
+// createdAt: {
+//         type: Date, 
+//         default: Date.now,
+// }
