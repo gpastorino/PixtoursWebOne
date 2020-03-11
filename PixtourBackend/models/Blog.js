@@ -15,6 +15,9 @@ createdAt: {
         default: Date.now,
 }, 
 comments:[{
+        author: {
+                type: String,
+        },
         content: {
                 type: String, 
         }, 

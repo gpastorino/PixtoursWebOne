@@ -1,5 +1,6 @@
 const db = require('../models');
 
+
 //show post
 const show = (request, response) => {
         db.Comment.findById(request.params.id, (error, foundComment) => {
@@ -19,9 +20,11 @@ const show = (request, response) => {
 const create = (request, response) => {
 
         const newComment = request.body;
+
         // newPost.authorId = request.session.currentUser.id;
         console.log(request.body)
         console.log(newComment)
+        
         db.Comment.create(newComment, (error, savedComment) => {
                 if(error) return response.status(500).json({
                         status: 500,

@@ -31,9 +31,12 @@ const show = (request, response) => {
 // Create Posts:
 
 const create = (request, response) => {
+
         const newBlog = request.body;
+
         // newPost.authorId = request.session.currentUser.id;
         console.log(request.body)
+        
         db.Blog.create(newBlog, (error, savedBlog) =>{
                 if (error) return response.status(500).json({
                         status:500,

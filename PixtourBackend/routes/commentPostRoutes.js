@@ -17,7 +17,7 @@ router.get('/:id', controllers.comment.show);
 
 //create:
 router.post('/create', controllers.comment.create);
-
+        //associate comment with blog post id here
 
 //update:
 router.put('/:id', controllers.comment.update);
