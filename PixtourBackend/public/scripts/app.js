@@ -109,8 +109,79 @@ changeBlogPost.addEventListener('click', (event) => {
                 console.log(blogId)
 
 
+                location.href= `/blog/${blogId}/update`
+
+                        fetch(`${API}api/v1/blog/${blogId}/update`, {
+                        method: 'GET'
+                        }).then((response) => response.json())
+                        .then(data => {
+                                console.log(data);
+
+                                let postArray = data.data;
+
+                                //this is for the count:
+                                // let numCallbackRuns = 0;
+                                // <h1 class="display-3">Blog Entry # ${numCallbackRuns}</h1>
+
+                                postArray.forEach(post => {
+                                        // numCallbackRuns++
+                                        let secondCol = document.querySelectorAll('.col-sm')[1];
+                                        
+                                        let blogPostCard = document.createElement('div');
+                                        blogPostCard.innerHTML =  `<div class="jumbotron">
+                                                                
+                                                                        <p id="blogTitle">${post.title}</p>
+                                                                        <p id="blogAuthor">${post.author}</p>
+                                                                        <p id="blogContent">${post.content}</p>
+                                                                        <hr class="my-4">
+                                                                        <button id=${post._id} name="delete" type="button" class="btn btn-danger">Destroy Blog Post</button>
+                                                                        <button id=${post._id} name="edit" type="button" class="btn btn-secondary">Edit Blog Post</button>
+                                                                        <button id="blogSubmit" class="btn btn-primary">Comment</button>
+                                                                        <p class="lead"></p>
+                                                                </div>`;
+                                        secondCol.appendChild(blogPostCard);
+                                })
+                        })
+                        .catch(err => console.log(err));
+
+
+
+
+
+
+
+                //I need a redirect to a page to update the blog, and then once, updated, to return back to the main page to show the updated information. 
+
+                fetch(`${API}api/v1/blog/${blogId}`, {
+                        method: 'PUT',
+                        headers: {
+                                'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(newBlog),
+                })
+                .then((response) => response.json())
+                .then((data)=> console.log(data))
+                .catch((err)=> console.log(err));
+
+
+
+
         };
 });
+
+//redirect from teh button click to the new form
+//create a fetch to get the data into the form 
+//generate the Update information on the submit from that update form.
+
+
+
+
+
+
+
+
+
+
         // if (deleteBlogPost == deleteBlogId )
         // deleteBlog
 
@@ -159,6 +230,14 @@ form.addEventListener('submit', (event) =>{
 
 
 
+function clickinner(target) { // Target refers to the clicked element
+        window.location ="/";
+    };
+
+
+
+
+        // a resource:  https://gomakethings.com/how-to-use-the-fetch-api-with-vanilla-js/
 
 
 //example:  
