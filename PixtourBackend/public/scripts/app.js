@@ -74,21 +74,18 @@ form.addEventListener('submit', (event) => {
         .catch((err)=> console.log(err));
 
 
-//Delete route:  
-
-//  Update Blog post:
-//similar to the create, except with a new window, and get the id.  
-//this below is a copy of the create:  
-
 });
 
 
-const changeBlogPost = document.getElementById('changeBlogPost'); //this is the div that exists before, and encompasses all of the dynamically added divs.
+
+//Delete route:  
+
+const deleteBlogPost = document.getElementById('deleteBlogPost'); //this is the div that exists before, and encompasses all of the dynamically added divs.
 
 //this one is dynamically added. 
 // const deleteBlog = document.getElementById('deleteBlog'); 
 
-changeBlogPost.addEventListener('click', (event) => {
+deleteBlogPost.addEventListener('click', (event) => {
         if(event.target.name === 'delete'){
                 blogId = event.target.id;  //how did you know this would derive the id? is it the objec property of the div? 
                 console.log(blogId)
@@ -103,71 +100,83 @@ changeBlogPost.addEventListener('click', (event) => {
                         // .then((data) => getAllBlogs())
                         .catch((err) => console.log(err));
         }
-
         else if(event.target.name === 'edit'){
                 blogId = event.target.id;
                 console.log(blogId)
 
 
                 location.href= `/blog/${blogId}/update`
-
-                        fetch(`${API}api/v1/blog/${blogId}/update`, {
-                        method: 'GET'
-                        }).then((response) => response.json())
-                        .then(data => {
-                                console.log(data);
-
-                                let postArray = data.data;
-
-                                //this is for the count:
-                                // let numCallbackRuns = 0;
-                                // <h1 class="display-3">Blog Entry # ${numCallbackRuns}</h1>
-
-                                postArray.forEach(post => {
-                                        // numCallbackRuns++
-                                        let secondCol = document.querySelectorAll('.col-sm')[1];
-                                        
-                                        let blogPostCard = document.createElement('div');
-                                        blogPostCard.innerHTML =  `<div class="jumbotron">
-                                                                
-                                                                        <p id="blogTitle">${post.title}</p>
-                                                                        <p id="blogAuthor">${post.author}</p>
-                                                                        <p id="blogContent">${post.content}</p>
-                                                                        <hr class="my-4">
-                                                                        <button id=${post._id} name="delete" type="button" class="btn btn-danger">Destroy Blog Post</button>
-                                                                        <button id=${post._id} name="edit" type="button" class="btn btn-secondary">Edit Blog Post</button>
-                                                                        <button id="blogSubmit" class="btn btn-primary">Comment</button>
-                                                                        <p class="lead"></p>
-                                                                </div>`;
-                                        secondCol.appendChild(blogPostCard);
-                                })
-                        })
-                        .catch(err => console.log(err));
-
-
-
-
-
-
-
-                //I need a redirect to a page to update the blog, and then once, updated, to return back to the main page to show the updated information. 
-
-                fetch(`${API}api/v1/blog/${blogId}`, {
-                        method: 'PUT',
-                        headers: {
-                                'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(newBlog),
-                })
-                .then((response) => response.json())
-                .then((data)=> console.log(data))
-                .catch((err)=> console.log(err));
-
-
-
-
         };
+
 });
+
+
+
+const updateBlogPost = document.getElementById('updateBlogPost');
+
+updateBlogPost.addEventListener('click', (event) => {
+        if(event.target.name == 'update'){
+                blogId = event.target.id;
+                console.log(blogId)
+
+
+        }
+        else if(event.target.name === 'back'){
+                location.href= `/blog/`
+        }
+});
+
+//                         fetch(`${API}api/v1/blog/${blogId}/update`, {
+//                         method: 'GET'
+//                         }).then((response) => response.json())
+//                         .then(data => {
+//                                 console.log(data);
+
+//                                 let postArray = data.data;
+
+//                                 //this is for the count:
+//                                 // let numCallbackRuns = 0;
+//                                 // <h1 class="display-3">Blog Entry # ${numCallbackRuns}</h1>
+
+//                                 postArray.forEach(post => {
+//                                         // numCallbackRuns++
+//                                         let secondCol = document.querySelectorAll('.col-sm')[1];
+                                        
+//                                         let blogPostCard = document.createElement('div');
+//                                         blogPostCard.innerHTML =  `<div class="jumbotron">
+                                                                
+//                                                                         <p id="blogTitle">${post.title}</p>
+//                                                                         <p id="blogAuthor">${post.author}</p>
+//                                                                         <p id="blogContent">${post.content}</p>
+//                                                                         <hr class="my-4">
+//                                                                         <button id=${post._id} name="delete" type="button" class="btn btn-danger">Destroy Blog Post</button>
+//                                                                         <button id=${post._id} name="edit" type="button" class="btn btn-secondary">Edit Blog Post</button>
+//                                                                         <button id="blogSubmit" class="btn btn-primary">Comment</button>
+//                                                                         <p class="lead"></p>
+//                                                                 </div>`;
+//                                         secondCol.appendChild(blogPostCard);
+//                                 })
+//                         })
+//                         .catch(err => console.log(err));
+
+//                 //I need a redirect to a page to update the blog, and then once, updated, to return back to the main page to show the updated information. 
+
+//                 fetch(`${API}api/v1/blog/${blogId}`, {
+//                         method: 'PUT',
+//                         headers: {
+//                                 'Content-Type': 'application/json',
+//                         },
+//                         body: JSON.stringify(newBlog),
+//                 })
+//                 .then((response) => response.json())
+//                 .then((data)=> console.log(data))
+//                 .catch((err)=> console.log(err));
+
+
+
+
+//         };
+// });
 
 //redirect from teh button click to the new form
 //create a fetch to get the data into the form 
@@ -195,44 +204,44 @@ changeBlogPost.addEventListener('click', (event) => {
 
 
 
-form.addEventListener('submit', (event) =>{
+// form.addEventListener('submit', (event) =>{
 
-        // event.preventDefault();
+//         // event.preventDefault();
 
-        const titleInput = document.getElementById('title');
-        const authorInput = document.getElementById('author');
-        const contentInput = document.getElementById('blogContent');
+//         const titleInput = document.getElementById('title');
+//         const authorInput = document.getElementById('author');
+//         const contentInput = document.getElementById('blogContent');
 
-        //creating object to send over to the server:
+//         //creating object to send over to the server:
 
-        const newBlog = {
-                title: titleInput.value, 
-                author: authorInput.value, 
-                content:  contentInput.value
-        };
+//         const newBlog = {
+//                 title: titleInput.value, 
+//                 author: authorInput.value, 
+//                 content:  contentInput.value
+//         };
 
-        console.log(newBlog);
+//         console.log(newBlog);
 
-        fetch('http://localhost:4000/api/v1/blog/create', {
-                method: 'POST',
-                headers: {
-                        'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(newBlog),
-        })
-        .then((response) => response.json())
-        .then((data)=> console.log(data))
-        .catch((err)=> console.log(err));
+//         fetch('http://localhost:4000/api/v1/blog/create', {
+//                 method: 'POST',
+//                 headers: {
+//                         'Content-Type': 'application/json',
+//                 },
+//                 body: JSON.stringify(newBlog),
+//         })
+//         .then((response) => response.json())
+//         .then((data)=> console.log(data))
+//         .catch((err)=> console.log(err));
 
 
         
-});
+// });
 
 
 
 function clickinner(target) { // Target refers to the clicked element
         window.location ="/";
-    };
+};
 
 
 
