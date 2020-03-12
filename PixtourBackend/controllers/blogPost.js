@@ -59,7 +59,7 @@ const update = (request, response) => {
         db.Blog.findByIdAndUpdate(
                 request.params.id, 
                 request.body, 
-                {new:true }, 
+                { new : true }, 
                 
                 (error, updatedBlog) => {
                 if(error) return response.status(500).json({

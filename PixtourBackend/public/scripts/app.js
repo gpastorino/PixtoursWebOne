@@ -105,26 +105,26 @@ deleteBlogPost.addEventListener('click', (event) => {
                 console.log(blogId)
 
 
-                location.href= `/blog/${blogId}/update`
+                location.href= `/blog/?id=${blogId}`
         };
 
 });
 
 
 
-const updateBlogPost = document.getElementById('updateBlogPost');
+// const updateBlogPost = document.getElementById('updateBlogPost');
 
-updateBlogPost.addEventListener('click', (event) => {
-        if(event.target.name == 'update'){
-                blogId = event.target.id;
-                console.log(blogId)
+// updateBlogPost.addEventListener('click', (event) => {
+//         if(event.target.name == 'update'){
+//                 blogId = event.target.id;
+//                 console.log(blogId)
 
 
-        }
-        else if(event.target.name === 'back'){
-                location.href= `/blog/`
-        }
-});
+//         }
+//         else if(event.target.name === 'Back'){
+//                 location.href= `/blog/`
+//         }
+// });
 
 //                         fetch(`${API}api/v1/blog/${blogId}/update`, {
 //                         method: 'GET'
