@@ -5,8 +5,17 @@
         margin: 0;
         box-sizing: border-box;
         /* box-sizing: border-box;   has to do with padding.  border padding will not increase the overall width of the element.  if we dont want to add to the width of the element.  we can do this.  we're pushing the internal content, as opposed to growing the element.   */
+    
+    
     }
 
+    body {
+    
+        background-image: url('./images/longspace.jpeg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
     /* LAYOUT
     *****************************************/
     .container {

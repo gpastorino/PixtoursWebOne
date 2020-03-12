@@ -22,6 +22,9 @@ router.get('/:id', controllers.comment.show);
 
 
 //create:
+
+//this format will wokr to create a route, and the route can relate to blog and comment as well.  as the server will be able to make sense of it. 
+
 router.post('/:id/create', controllers.comment.create);
         
 

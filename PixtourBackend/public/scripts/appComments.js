@@ -17,10 +17,12 @@ const API = 'http://localhost:4000/';
 
 
 
+//another id to test:  5e6684c4b2636e5bc84fed67
 
+// 5e6934df8f8556a5301a8944
 
-//get blog posts onto page on loads
-fetch('http://localhost:4000/api/v1/blog/5e6934df8f8556a5301a8944', {
+//gets blog posts onto page on loads
+fetch('http://localhost:4000/api/v1/blog/5e6684c4b2636e5bc84fed67', {
 
 
 // fetch(`http://localhost:4000/api/v1/blog/${:id}`, {
@@ -37,14 +39,13 @@ fetch('http://localhost:4000/api/v1/blog/5e6934df8f8556a5301a8944', {
                 
                 let blogPostCard = document.createElement('div');
                 blogPostCard.innerHTML =  `<div class="jumbotron">
-
-
+0
                                                 <p id="blogTitle">${post.title}</p>
                                                 <p id="blogAuthor">${post.author}</p>
                                                 <p id="blogContent">${post.content}</p>
                                                 <hr class="my-4">
-                                                <button type="button" class="btn btn-danger">Destroy Blog Post</button>
-                                                <button type="button" class="btn btn-secondary">Edit Blog Post</button>
+                                                <button id="deleteBlog" type="button" class="btn btn-danger">Destroy Blog Post</button>
+                                                <button id="editBlog" type="button" class="btn btn-secondary">Edit Blog Post</button>
                                                 <button id="blogSubmit" class="btn btn-primary">Comment</button>
                                                 <p class="lead"></p>
                                         </div>`;
@@ -61,8 +62,8 @@ fetch('http://localhost:4000/api/v1/blog/5e6934df8f8556a5301a8944', {
                         commentOnBlog.innerHTML =       `<div class="card-body">
                                                                 <p class="card-text">${comment.content}</p>
                                                                 <p class="card-text" id="commentauthor">By ${comment.author}</p>
-                                                                <button type="button" class="btn btn-secondary">Edit Comment</button>
-                                                                <button type="button" class="btn btn-danger">Destroy Comment</button>
+                                                                <button id="editComment" type="button" class="btn btn-secondary">Edit Comment</button>
+                                                                <button id="deleteComment" type="button" class="btn btn-danger">Destroy Comment</button>
                                                         </div>`;
                         idOfComment.appendChild(commentOnBlog);
                 })
@@ -74,9 +75,9 @@ fetch('http://localhost:4000/api/v1/blog/5e6934df8f8556a5301a8944', {
 
 const commentForm = document.getElementById('commentForm');
 
-commentForm.addEventListener('submit', (event) =>{
+commentForm.addEventListener('submit', (event) => {
 
-        event.preventDefault();
+        // event.preventDefault();
 
         const authorInput = document.getElementById('commentAuthor');
         const contentInput = document.getElementById('commentContent');
@@ -88,12 +89,13 @@ commentForm.addEventListener('submit', (event) =>{
                 content:  contentInput.value
         };
 
-        console.log(newComment);
+        console.log(JSON.stringify(newComment));
+        
 
 
-        let id = '5e6934df8f8556a5301a8944';
+        let blogId = '5e6684c4b2636e5bc84fed67';
 
-        fetch(`http://localhost:4000/api/v1/blog/${id}/create`, {
+        fetch(`/api/v1/comment/${blogId}/create`, {
                 method: 'POST',
         // fetch(`http://localhost:4000/api/v1/blog/${id}/`, {
         //         method: 'PUT',
@@ -153,3 +155,6 @@ commentForm.addEventListener('submit', (event) =>{
 // building a blog with node:
 // https://medium.com/@andrewhartnett/tutorial-building-a-simple-blog-with-node-express-mongo-8e760630db74
 
+
+//with jquery:
+// https://stackoverflow.com/questions/43389704/how-to-send-delete-request-to-node-with-button-and-jquery
