@@ -99,7 +99,6 @@ deleteBlogPost.addEventListener('click', (event) => {
                         // .then((data) => getAllBlogs())
                         .catch((err) => console.log(err));
         }
-
         else if(event.target.name === 'edit'){
                 blogId = event.target.id;
                 console.log(blogId)
@@ -107,13 +106,11 @@ deleteBlogPost.addEventListener('click', (event) => {
                 location.href = `/blog/?id=${blogId}`
 
         }
-
         else if(event.target.name === 'commentOnBlog'){
                 blogId = event.target.id;
                 console.log(blogId);
-
                 location.href = `/comments/?id=${blogId}`
-        }
+        };
 
 });
 

@@ -46,14 +46,11 @@ fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
                 
                 let blogPostCard = document.createElement('div');
                 blogPostCard.innerHTML =  `<div class="jumbotron">
-0
                                                 <p id="blogTitle">${post.title}</p>
                                                 <p id="blogAuthor">${post.author}</p>
                                                 <p id="blogContent">${post.content}</p>
                                                 <hr class="my-4">
-                                                <button id="deleteBlog" type="button" class="btn btn-danger">Destroy Blog Post</button>
-                                                <button id="editBlog" type="button" class="btn btn-secondary">Edit Blog Post</button>
-                                                <button id="blogSubmit" class="btn btn-primary">Comment</button>
+                                                <button id="back" type="button" class="btn btn-primary">Comment</button>
                                                 <p class="lead"></p>
                                         </div>`;
                 secondCol.appendChild(blogPostCard);
@@ -127,6 +124,13 @@ commentForm.addEventListener('submit', (event) => {
 // event.preventDefault();
 
 });
+
+
+
+
+//removed from div :
+/* <button id="deleteBlog" type="button" class="btn btn-danger">Destroy Blog Post</button>
+<button id="editBlog" type="button" class="btn btn-secondary">Edit Blog Post</button> */
 
 
 
