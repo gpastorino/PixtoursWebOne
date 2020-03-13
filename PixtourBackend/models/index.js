@@ -12,7 +12,7 @@ mongoose.connect(dbUrl, {
 })
         .then(() => console.log('MongoDB is connected...'))
         .catch((err) => console.log(`MongoDB connection error": ${err}`));
-
+mongoose.connect( process.env.MONGODB_URI || 4000 );
 
 module.exports = {
         Comment: require('./Comment'),
