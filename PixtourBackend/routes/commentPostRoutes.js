@@ -4,31 +4,73 @@ const controllers = require('../controllers');
 
 
 
-//  '/api/ goes in front of each of these.  
+//  /api/ goes in front of each of these.  
+
+
+
+
+// creating a different version of comment:  =======================
+
 
 //index
 
-router.get('/blog',  (request, response) => {
-response.send('HELLO 2');
-});
+router.get('/', controllers.comment.index);
 
 //show:
-// router.get('/comment/:id', (request, response)=>{
-       
-// });
-// router.get('/comment/:id', controllers.comment.show);
+
+router.get('/:id', controllers.comment.show);
 
 
 //create:
-router.post('/comment/create', controllers.comment.create);
+
+//this format will wokr to create a route, and the route can relate to blog and comment as well.  as the server will be able to make sense of it. 
+
+router.post('/:id/create', controllers.comment.create);
+        
+
+//associate comment with blog post id here
+
+// router.post('/')
 
 
 //update:
-router.put('/comment/:id', controllers.comment.update);
+
+router.put('/:id', controllers.comment.update);
 
 //destroy:
 
-router.delete('/comment/:id', controllers.comment.destroy)
+router.delete('/:id', controllers.comment.destroy)
+
+
+
+
+
+
+// //index
+
+// router.get('/', controllers.comment.index);
+
+// //show:
+
+// router.get('/:id', controllers.comment.show);
+
+
+// //create:
+// router.post('/create', controllers.comment.create);
+        
+
+// //associate comment with blog post id here
+
+// // router.post('/')
+
+
+// //update:
+
+// router.put('/:id', controllers.comment.update);
+
+// //destroy:
+
+// router.delete('/:id', controllers.comment.destroy)
 
 
 
