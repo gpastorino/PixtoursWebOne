@@ -1,6 +1,8 @@
 
 
-console.log('Ground Control to Super Major Tomtom...');
+console.log('Ground Control to Super Major Timtam...');
+const burny = document.getElementById('burny');
+const bloggy = document.getElementById('bloggy');
 
 const form = document.getElementById('blogForm');
 const API = 'http://localhost:4000/';
@@ -24,7 +26,7 @@ fetch('http://localhost:4000/api/v1/blog/', {
                 let blogPostCard = document.createElement('div');
                 blogPostCard.innerHTML =  `<div class="jumbotron">
                                                 <p class="display-3">Blog Entry # ${numCallbackRuns}</p>
-                                                <h1 id="blogTitle">${post.title}</h1>
+                                                <h3 id="blogTitle">${post.title}</h3>
                                                 <p id="blogAuthor">${post.author}</p>
                                                 <p id="blogContent">${post.content}</p>
                                                 <hr class="my-4">
@@ -72,7 +74,7 @@ form.addEventListener('submit', (event) => {
         .then((data)=> console.log(data))
         .catch((err)=> console.log(err));
 
-
+        bloggy.play();
 });
 
 
@@ -98,6 +100,7 @@ deleteBlogPost.addEventListener('click', (event) => {
                         })
                         // .then((data) => getAllBlogs())
                         .catch((err) => console.log(err));
+                        burny.play();
         }
         else if(event.target.name === 'edit'){
                 blogId = event.target.id;
