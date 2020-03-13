@@ -18,6 +18,7 @@ Bootstrap
 
 To install this app, you will need to start up a mongoDB, and run nodemon.  Once cloned, go into the file directory of the app, and use npm i install to get all of the needed dependencies. If you are concerned you haven't gotten all of the dependences, they can be added individually while in the apps directory via npm, followed by each of the dependencies:  
 
+    ```
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
@@ -25,8 +26,9 @@ To install this app, you will need to start up a mongoDB, and run nodemon.  Once
     "mongoose": "^5.9.3",
     "mongoose-connect": "0.0.3",
     "utils": "^0.3.1"
+    ```
     
-    for optimal usability, make sure the version numbers are the same for your installations in your package_json file.  
+    For optimal usability, make sure the version numbers are the same for your installations in your package_json file.  
     
     Please see this trello board for user stories, wireframes and ERD. 
     https://trello.com/b/yubZLLbO/project4-pixtourswebone?menu=filter&filter=label:none
