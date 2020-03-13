@@ -21,14 +21,21 @@ const API = 'http://localhost:4000/';
 
 // 5e6934df8f8556a5301a8944
 
+
+queryString = location.search
+const urlParams = new URLSearchParams(queryString);
+const blogId = urlParams.get('id');
+console.log(blogId)
+
+
 //gets blog posts onto page on loads
-fetch('http://localhost:4000/api/v1/blog/5e6684c4b2636e5bc84fed67', {
+fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
 
 
 // fetch(`http://localhost:4000/api/v1/blog/${:id}`, {
 
-
         method: 'GET'
+
 }).then((response) => response.json())
 .then(data => {
         console.log(data);
@@ -79,6 +86,7 @@ commentForm.addEventListener('submit', (event) => {
 
         // event.preventDefault();
 
+        // if(event.target.name === 'Submit'){
         const authorInput = document.getElementById('commentAuthor');
         const contentInput = document.getElementById('commentContent');
 
@@ -93,7 +101,7 @@ commentForm.addEventListener('submit', (event) => {
         
 
 
-        let blogId = '5e6684c4b2636e5bc84fed67';
+        // let blogId = '5e6934df8f8556a5301a8944';
 
         fetch(`/api/v1/comment/${blogId}/create`, {
                 method: 'POST',
@@ -103,10 +111,21 @@ commentForm.addEventListener('submit', (event) => {
                         'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(newComment),
+                // body: JSON.stringify(newComment),
         })
         .then((response) => response.json())
         .then((data)=> console.log(data))
         .catch((err)=> console.log(err));
+
+        // }
+        event.preventDefault();
+        location.reload();
+        // document.reload();
+        // window.location.reload();
+
+// event.preventDefault();
+// event.preventDefault();
+
 });
 
 

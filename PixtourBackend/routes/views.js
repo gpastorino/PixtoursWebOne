@@ -14,11 +14,17 @@ router.get('/', (request, response) => {
 })
 
 router.get('/comments', (request, response) => {
-        response.sendFile(path.join(__dirname, '../views/comments/comments.html'));
+        response.sendFile(path.join(__dirname, '../views/comments.html'));
 })
 
 router.get(`/blog`, (request, response) => {
         response.sendFile(path.join(__dirname, '../views/updateBlog.html'));
 })
+
+
+// //make route for creating comments form
+
+        //TODO: Inside comments form, add an event listener to redirect to main comments page on submission of comments form
+
 
 module.exports = router;

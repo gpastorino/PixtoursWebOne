@@ -20,7 +20,7 @@ console.log(blogId)
 
 form.addEventListener('click', (event) => {
 
-        event.preventDefault(); 
+        event.preventDefault();
 
 
         if(event.target.name === 'Submit'){
@@ -67,36 +67,3 @@ function clickinner(target) { // Target refers to the clicked element
 
         window.location ="/";
 };
-
-
-// form.addEventListener('submit', (event) => {
-
-//         // event.preventDefault();
-
-//         const titleInput = document.getElementById('title');
-//         const authorInput = document.getElementById('author');
-//         const contentInput = document.getElementById('blogContent');
-
-//         //creating object to send over to the server:
-
-//         const newBlog = {
-//                 title: titleInput.value, 
-//                 author: authorInput.value, 
-//                 content:  contentInput.value
-//         };
-
-//         console.log(newBlog);
-
-//         fetch('http://localhost:4000/api/v1/blog/create', {
-//                 method: 'POST',
-//                 headers: {
-//                         'Content-Type': 'application/json',
-//                 },
-//                 body: JSON.stringify(newBlog),
-//         })
-//         .then((response) => response.json())
-//         .then((data)=> console.log(data))
-//         .catch((err)=> console.log(err));
-
-
-// });
