@@ -8,7 +8,6 @@ const urlParams = new URLSearchParams(queryString);
 const blogId = urlParams.get('id');
 
 
-
 //Gets blog posts onto page on load
 fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
 
@@ -48,8 +47,6 @@ fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
                                                         </div>`;
                         idOfComment.appendChild(commentOnBlog);
                 })
-
-        
 })
 .catch(err => console.log(err));
 
@@ -68,12 +65,18 @@ backtoHome.addEventListener('click', (event) => {
 //Meant to provide a route to leave a comment. 
 const commentForm = document.getElementById('commentForm');
 
-commentForm.addEventListener('submit', (event) => {
+commentForm.addEventListener('click', (event) => {
 
         // console.log('HELLO')
+
+        console.log(event.target.name);
+        // event.preventDefault();
+
         if(event.target.name === 'Submit'){
 
-                // console.log('HELLO')
+                console.log('HELLO')
+        event.preventDefault();
+                
 
         const authorInput = document.getElementById('commentAuthor');
         const contentInput = document.getElementById('commentContent');
@@ -98,8 +101,8 @@ commentForm.addEventListener('submit', (event) => {
         .then((response) => response.json())
         .then((data)=> console.log(data))
         .catch((err)=> console.log(err));
-
-        }
         event.preventDefault();
         location.reload();
+        }
+
 });
