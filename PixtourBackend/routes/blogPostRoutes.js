@@ -25,27 +25,3 @@ router.delete('/:id', controllers.blog.destroy);
 module.exports= router;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//index:
-
-//  '/api/ goes in front of each of these.  
-
-// router.get('/blog', (request, response)=>{
-//         response.send({type:'GET'});
-// });
-

@@ -1,38 +1,16 @@
-// const form = document.getElementById('commentForm');
 
-
-// const form = document.getElementById('blogForm');
-
+//to be used for DRY
 const API = 'http://localhost:4000/';
-
-
-
-// this is where I need to find the ID of the specified Blog Posting:
-
-// How would i get the info from the title to get the ID of the blog post? 
-
-//need the id of the div.  each div will need a unique id.
-
-//how to populate a unique id for a specific div, and then to access the content from that div. 
-
-
-
-//another id to test:  5e6684c4b2636e5bc84fed67
-
-// 5e6934df8f8556a5301a8944
 
 
 queryString = location.search
 const urlParams = new URLSearchParams(queryString);
 const blogId = urlParams.get('id');
-console.log(blogId)
 
 
-//gets blog posts onto page on loads
+
+//Gets blog posts onto page on load
 fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
-
-
-// fetch(`http://localhost:4000/api/v1/blog/${:id}`, {
 
         method: 'GET'
 
@@ -55,7 +33,6 @@ fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
                                         </div>`;
                 secondCol.appendChild(blogPostCard);
 
-                //checking that the post.comments works:  
 
                 let commentsArray = post.comments;
                 let idOfComment = document.getElementById('commentsPost');
@@ -66,8 +43,8 @@ fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
                         commentOnBlog.innerHTML =       `<div class="card-body">
                                                                 <p class="card-text">${comment.content}</p>
                                                                 <p class="card-text" id="commentauthor">By ${comment.author}</p>
-                                                                <button id="editComment" type="button" class="btn btn-secondary">Edit Comment</button>
-                                                                <button id="deleteComment" type="button" class="btn btn-danger">Destroy Comment</button>
+                                                                <p id="breaker"></p>
+                                                               
                                                         </div>`;
                         idOfComment.appendChild(commentOnBlog);
                 })
@@ -77,7 +54,7 @@ fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
 .catch(err => console.log(err));
 
 
-
+//Back button to get back to the index page.
 const backtoHome = document.getElementById('blog');
 
 backtoHome.addEventListener('click', (event) => {
@@ -88,14 +65,16 @@ backtoHome.addEventListener('click', (event) => {
         
 });
 
-
+//Meant to provide a route to leave a comment. 
 const commentForm = document.getElementById('commentForm');
 
 commentForm.addEventListener('submit', (event) => {
 
-        // event.preventDefault();
-
+        // console.log('HELLO')
         if(event.target.name === 'Submit'){
+
+                // console.log('HELLO')
+
         const authorInput = document.getElementById('commentAuthor');
         const contentInput = document.getElementById('commentContent');
 
@@ -110,8 +89,7 @@ commentForm.addEventListener('submit', (event) => {
 
         fetch(`/api/v1/comment/${blogId}/create`, {
                 method: 'POST',
-        // fetch(`http://localhost:4000/api/v1/blog/${id}/`, {
-        //         method: 'PUT',
+
                 headers: {
                         'Content-Type': 'application/json',
                 },
@@ -125,60 +103,3 @@ commentForm.addEventListener('submit', (event) => {
         event.preventDefault();
         location.reload();
 });
-
-
-
-
-//removed from div :
-/* <button id="deleteBlog" type="button" class="btn btn-danger">Destroy Blog Post</button>
-<button id="editBlog" type="button" class="btn btn-secondary">Edit Blog Post</button> */
-
-
-
-//original==========================================================================
-
-// const commentForm = document.getElementById('commentForm');
-
-// commentForm.addEventListener('submit', (event) =>{
-
-//         event.preventDefault();
-
-//         const authorInput = document.getElementById('commentAuthor');
-//         const contentInput = document.getElementById('commentContent');
-
-//         //creating object to send over to the server:
-
-//         const newComment = {
-//                 author: authorInput.value, 
-//                 content:  contentInput.value
-//         };
-
-//         console.log(newComment);
-
-
-        
-//         fetch('http://localhost:4000/api/v1/comment/create', {
-//                 method: 'POST',
-//                 headers: {
-//                         'Content-Type': 'application/json',
-//                 },
-//                 body: JSON.stringify(newComment),
-//         })
-//         .then((response) => response.json())
-//         .then((data)=> console.log(data))
-//         .catch((err)=> console.log(err));
-
-// });
-
-
-//how to link this to the Blog post?
-//needs to be associated to the blog id
-
-
-// https://stackoverflow.com/questions/46118666/node-js-blog-post-add-comment-not-working
-// building a blog with node:
-// https://medium.com/@andrewhartnett/tutorial-building-a-simple-blog-with-node-express-mongo-8e760630db74
-
-
-//with jquery:
-// https://stackoverflow.com/questions/43389704/how-to-send-delete-request-to-node-with-button-and-jquery

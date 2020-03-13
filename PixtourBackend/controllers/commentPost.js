@@ -48,16 +48,10 @@ const create = (request, response) => {
                         }
                         foundBlog.comments.push(createdComment._id);
                         foundBlog.save();
-                        // console.log(foundBlog.comments)
                         response.success(200, createdComment);
                 });
         })
-
-
-
-
-        
-        };
+ };
 
 
 //update/edit posts:
@@ -98,7 +92,7 @@ module.exports = {
 
 
 
-
+//resources: 
 // https://alexanderzeitler.com/articles/mongoose-referencing-schema-in-properties-and-arrays/
 
 // https://stackoverflow.com/questions/18001478/referencing-another-schema-in-mongoose

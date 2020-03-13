@@ -22,7 +22,7 @@ router.get(`/blog`, (request, response) => {
 })
 
 
-// //make route for creating comments form
+//make route for creating comments form-- do i need this still? comments stopped working ...
 
         //TODO: Inside comments form, add an event listener to redirect to main comments page on submission of comments form
 

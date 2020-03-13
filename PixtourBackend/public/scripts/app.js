@@ -1,12 +1,12 @@
-// import { response } from "express";
 
-console.log('Ground Control to Major Tom...');
+
+console.log('Ground Control to Super Major Tomtom...');
 
 const form = document.getElementById('blogForm');
 const API = 'http://localhost:4000/';
 
 
-//get blog posts onto page on loads
+//Get blog posts onto page on loads
 fetch('http://localhost:4000/api/v1/blog/', {
         method: 'GET'
 }).then((response) => response.json())
@@ -23,8 +23,8 @@ fetch('http://localhost:4000/api/v1/blog/', {
                 
                 let blogPostCard = document.createElement('div');
                 blogPostCard.innerHTML =  `<div class="jumbotron">
-                                                <h1 class="display-3">Blog Entry # ${numCallbackRuns}</h1>
-                                                <p id="blogTitle">${post.title}</p>
+                                                <p class="display-3">Blog Entry # ${numCallbackRuns}</p>
+                                                <h1 id="blogTitle">${post.title}</h1>
                                                 <p id="blogAuthor">${post.author}</p>
                                                 <p id="blogContent">${post.content}</p>
                                                 <hr class="my-4">
@@ -40,7 +40,7 @@ fetch('http://localhost:4000/api/v1/blog/', {
 
 
 
-//this code is to save a new blog post
+//This code is to save a new blog post
 //create:
 
 form.addEventListener('submit', (event) => {
@@ -124,6 +124,6 @@ function clickinner(target) { // Target refers to the clicked element
 
 
 
-// taken from the div: 
+// taken from the div: Will put back to add CRUD in the future:  
 
 /* <button id="commentOnBlog" name="commentOnBlog" class="btn btn-primary">Comment</button> */

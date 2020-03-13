@@ -3,20 +3,14 @@ console.log('Ground Control to Major DOM...');
 const form = document.getElementById('blogForm');
 const API = 'http://localhost:4000/';
 
-
-//this is how to reference the the id in a url.  
-//https://www.sitepoint.com/get-url-parameters-with-javascript/
-//https://itnext.io/coding-the-5-basic-restful-actions-for-javascript-c25279483e4f
-//https://jsao.io/2018/04/creating-a-rest-api-handling-post-put-and-delete-requests/
-
-
+//this is used to grab the id from a URL: 
 queryString = location.search
 const urlParams = new URLSearchParams(queryString);
 const blogId = urlParams.get('id');
 console.log(blogId)
 
 
-// const updateBlogPost = document.getElementById('updateBlogPost');
+//This is the button click to update a blog entry: 
 
 form.addEventListener('click', (event) => {
 
@@ -24,8 +18,7 @@ form.addEventListener('click', (event) => {
 
 
         if(event.target.name === 'Submit'){
-                // blogId = event.target.id;
-                        // console.log(blogId)
+
 
                 const titleInput = document.getElementById('title');
                 const authorInput = document.getElementById('author');
@@ -61,6 +54,7 @@ form.addEventListener('click', (event) => {
 });
 
 
+//this is used to go back to the index route:  It may not be working. 
 function clickinner(target) { // Target refers to the clicked element
 
         event.preventDefault();

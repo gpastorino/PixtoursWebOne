@@ -11,7 +11,6 @@
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        /* background-position: center; */
     }
 
     #commentHero {
@@ -19,8 +18,17 @@
         background-size: cover;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        /* background-position: center; */
     }
+
+    #updateBlogBackground {
+        background-image: url('../images/herobackground.jpg');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+
+
+    }
+
 
     .container {
         max-width: 980px;
@@ -49,8 +57,13 @@
         color: white;
     }
 
-    #backButton {
 
-        
+
+    #breaker {
+
+        height: 10px;
+        width: 300px;
+        background-color: red;
+        border-radius: 15px 15px 15px 15px;
 
     }
