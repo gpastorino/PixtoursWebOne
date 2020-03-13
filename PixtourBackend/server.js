@@ -52,7 +52,8 @@ app.use('/api/v1/comment', routes.comment);
 app.use('/api/v1/blog', routes.blog);
 
 
-app.listen(PORT, () => console.log(`This is Pixtours Server running! ${PORT}`));
+app.listen(process.env.PORT || 3000);
+// app.listen(PORT, () => console.log(`This is Pixtours Server running! ${PORT}`));
 
 
 
