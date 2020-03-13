@@ -9,15 +9,17 @@
     #indexHero {
         background-image: url('../images/Longspace.jpeg');
         background-size: cover;
+        background-attachment: fixed;
         background-repeat: no-repeat;
-        background-position: center;
+        /* background-position: center; */
     }
 
     #commentHero {
         background-image: url('../images/bg-hero.jpg');
         background-size: cover;
+        background-attachment: fixed;
         background-repeat: no-repeat;
-        background-position: center;
+        /* background-position: center; */
     }
 
     .container {
@@ -45,4 +47,10 @@
 
     #title {
         color: white;
+    }
+
+    #backButton {
+
+        
+
     }

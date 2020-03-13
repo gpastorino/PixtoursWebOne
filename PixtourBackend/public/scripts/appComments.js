@@ -50,7 +50,7 @@ fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
                                                 <p id="blogAuthor">${post.author}</p>
                                                 <p id="blogContent">${post.content}</p>
                                                 <hr class="my-4">
-                                                <button id="back" type="button" class="btn btn-primary">Comment</button>
+                                                <button id="backToBlog"class="btn btn-primary" name="Back">Back</button>
                                                 <p class="lead"></p>
                                         </div>`;
                 secondCol.appendChild(blogPostCard);
@@ -77,13 +77,25 @@ fetch(`http://localhost:4000/api/v1/blog/${blogId}`, {
 .catch(err => console.log(err));
 
 
+
+const backtoHome = document.getElementById('blog');
+
+backtoHome.addEventListener('click', (event) => {
+
+        event.preventDefault();
+
+                window.location ="/";
+        
+});
+
+
 const commentForm = document.getElementById('commentForm');
 
 commentForm.addEventListener('submit', (event) => {
 
         // event.preventDefault();
 
-        // if(event.target.name === 'Submit'){
+        if(event.target.name === 'Submit'){
         const authorInput = document.getElementById('commentAuthor');
         const contentInput = document.getElementById('commentContent');
 
@@ -95,10 +107,6 @@ commentForm.addEventListener('submit', (event) => {
         };
 
         console.log(JSON.stringify(newComment));
-        
-
-
-        // let blogId = '5e6934df8f8556a5301a8944';
 
         fetch(`/api/v1/comment/${blogId}/create`, {
                 method: 'POST',
@@ -108,21 +116,14 @@ commentForm.addEventListener('submit', (event) => {
                         'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(newComment),
-                // body: JSON.stringify(newComment),
         })
         .then((response) => response.json())
         .then((data)=> console.log(data))
         .catch((err)=> console.log(err));
 
-        // }
+        }
         event.preventDefault();
         location.reload();
-        // document.reload();
-        // window.location.reload();
-
-// event.preventDefault();
-// event.preventDefault();
-
 });
 
 
