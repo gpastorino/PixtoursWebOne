@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./styles/bootstrap.css">
+        <scripts src="./scripts/app.js"></scripts>
+
+  </head>
+  <body style="background:transparent url('./images/herobackground.jpg') no-repeat center center /cover"> 
+        <div class="alert alert-dismissible alert-warning">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <h4 class="alert-heading">Warning!</h4>
+                <p class="mb-0">Your questions are about to be answered. To review the basics, refer to the main page  <a href="https://pix.tours" class="alert-link">Visit the Main Pixtours Site</a>.</p>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+                <a class="navbar-brand" href="#">Homebase</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                        <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                </li>
+
+                                <li class="nav-item">
+                                        <a class="nav-link" href="#">About</a>
+                                </li>
+                        </ul>
+
+                </div>
+        </nav>
+        <div class="container">
+                <div class="row">
+                        <div class="col-sm">
+                                <div class="half">
+                                        <div class="d-flex p-3">
+                                                <form>
+                                                        <fieldset>
+                                                        <legend>What was your picture sorting experience like?</legend>
+                                                        <div class="form-group">
+                                                                <div class="col-xs-4">
+                                                                        <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                                                <input id="author" type="text" class="form-control" name="author" placeholder="my alias">
+                                                                        </div>
+                                                                        <div class="input-group">
+                                                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                                                <input id="title" type="text" class="form-control" name="title" placeholder="blog title">
+                                                                        </div>
+
+                                                                        <textarea class="form-control" id="blogcontent" name="content" rows="10"></textarea>
+                                                                </div>
+                                                        </div>
+                                                        <button id="blogSubmit" class="btn btn-primary">Submit Blog Post</button>
+                                                </form>
+                                        </div>
+                                        
+                                </div>
+                        </div>
+
+                        <div class="col-sm">
+                                <div class="jumbotron">
+
+                                        <h1 class="display-3">Blog Entry #1</h1>
+                                        <p id="blogtitle">This is your title.</p>
+                                        <p id="blogauthor">My chosen Alias.</p>
+                                        <p class="lead">This is where the blog content goes. This is where the blog content goes.This is where the blog content goes.This is where the blog content goes.This is where the blog content goes.This is where the blog content goes.This is where the blog content goes.This is where the blog content goes.</p>
+                                        <hr class="my-4">
+                                        <button type="button" class="btn btn-secondary">Edit Blog Post</button>
+                                        <button type="button" class="btn btn-danger">Destroy Blog Post</button>
+                                        <p class="lead"></p>
+                                </div>
+
+                                <div class="card" style="width: 18rem;">
+
+                                        <div class="card-body">
+                                                <h5 class="card-title">My Comment</h5>
+                                                <p class="card-text">This is where the content for the comment will go.This is where the content for the comment will go.This is where the content for the comment will go.This is where the content for the comment will go.This is where the content for the comment will go.This is where the content for the comment will go.This is where the content for the comment will go.</p>
+                                                <p class="card-text" id="commentauthor">By Blahblahblah</p>
+                                                <button type="button" class="btn btn-secondary">Edit Comment</button>
+                                                <button type="button" class="btn btn-danger">Destroy Comment</button>
+                                        </div>
+
+                                        <div class="input-group">
+                                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                <input id="commentAuthor" type="text" class="form-control" name="commentAuthor" placeholder="my alias">
+                                        </div>
+
+                                        <div class="commentform">
+                                                <textarea class="form-control" id="exampleTextarea" rows="10"></textarea>
+
+                                        <button type="button" class="btn btn-primary">Submit Comment</button>
+
+
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
