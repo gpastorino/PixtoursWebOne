@@ -90,7 +90,7 @@ const deleteBlogPost = document.getElementById('deleteBlogPost'); //this is the 
 deleteBlogPost.addEventListener('click', (event) => {
         const burny = document.getElementById('burny');
         if(event.target.name === 'delete'){
-                blogId = event.target.id;  //how did you know this would derive the id? is it the objec property of the div? 
+                blogId = event.target.id;                                  //how did you know this would derive the id? is it the objec property of the div? 
                 console.log(blogId)
 
                 fetch(`${API}api/v1/blog/${blogId}`, {
