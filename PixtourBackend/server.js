@@ -13,7 +13,7 @@ require('dotenv').config();
 
 //configuration variable:  
 //heroku port, and local port:  
-const PORT  = process.env.PORT;
+var PORT  = process.env.PORT;
 
 
 //require Database:
@@ -53,7 +53,8 @@ app.use('/api/v1/blog', routes.blog);
 
 
 // app.listen(process.env.PORT);
-app.listen(PORT, () => console.log(`This is Pixtours Server running! ${PORT}`));
+app.listen(PORT, () => console.log(`This is Pixtours Server running!`));
+// app.listen(PORT, () => console.log(`This is Pixtours Server running! ${PORT}`));
 
 
 
