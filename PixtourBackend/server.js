@@ -13,8 +13,7 @@ require('dotenv').config();
 
 //configuration variable:  
 //heroku port, and local port:  
-var PORT  = process.env.PORT;
-
+var PORT  = process.env.PORT || `4000`;
 
 //require Database:
 const db = require('./models');
