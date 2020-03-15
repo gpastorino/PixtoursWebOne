@@ -4,7 +4,7 @@ Building out of the Webportal for Pixtours.
 
 Heroku Link:
 
-This is the start to the blog section for the Pixtours webpage, for the Pixtours app.  Eventually, users will be able to ask questions and receive answers from either myself or community members.   The curren iteration can receive blog posts, which can be created, edited, and deleted. While the comments on each blog can only be created. The design is such that it matches the general theme of Pixtours app. 
+This is the start to the blog section for the Pixtours webpage, for the Pixtours app.  Eventually, users will be able to ask questions and receive answers from either myself or community members.   The current iteration can receive blog posts, which can be created, edited, and deleted. While the comments on each blog can only be created. The design is such that it matches the general theme of Pixtours app. 
 
 Technologies used:
 mongoDB
