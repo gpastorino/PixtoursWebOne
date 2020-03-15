@@ -48,7 +48,8 @@ fetch('http://localhost:4000/api/v1/blog/', {
 form.addEventListener('submit', (event) => {
 
         // event.preventDefault();
-
+       
+        const bloggy = document.getElementById('bloggy');
         const titleInput = document.getElementById('title');
         const authorInput = document.getElementById('author');
         const contentInput = document.getElementById('blogContent');
@@ -87,8 +88,9 @@ const deleteBlogPost = document.getElementById('deleteBlogPost'); //this is the 
 // const deleteBlog = document.getElementById('deleteBlog'); 
 
 deleteBlogPost.addEventListener('click', (event) => {
+        const burny = document.getElementById('burny');
         if(event.target.name === 'delete'){
-                blogId = event.target.id;  //how did you know this would derive the id? is it the objec property of the div? 
+                blogId = event.target.id;                                  //how did you know this would derive the id? is it the objec property of the div? 
                 console.log(blogId)
 
                 fetch(`${API}api/v1/blog/${blogId}`, {

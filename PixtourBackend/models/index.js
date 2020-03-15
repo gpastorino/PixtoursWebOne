@@ -13,7 +13,6 @@ mongoose.connect(dbUrl, {
         .then(() => console.log('MongoDB is connected...'))
         .catch((err) => console.log(`MongoDB connection error": ${err}`));
 
-
 module.exports = {
         Comment: require('./Comment'),
         Blog: require('./Blog'),
