@@ -5,12 +5,12 @@ const burny = document.getElementById('burny');
 const bloggy = document.getElementById('bloggy');
 
 const form = document.getElementById('blogForm');
-// const API = 'http://localhost:4000/';
+const API = 'http://localhost:4000/';
 
 
 //Get blog posts onto page on loads
-fetch('/api/v1/blog/', {
-// fetch('http://localhost:4000/api/v1/blog/', {
+// fetch('/api/v1/blog/', {
+fetch('http://localhost:4000/api/v1/blog/', {
         method: 'GET'
 }).then((response) => response.json())
 .then(data => {
@@ -65,8 +65,8 @@ form.addEventListener('submit', (event) => {
 
         console.log(newBlog);
 
-        fetch('/api/v1/blog/create', {
-        // fetch('http://localhost:4000/api/v1/blog/create', {
+        // fetch('/api/v1/blog/create', {
+        fetch('http://localhost:4000/api/v1/blog/create', {
                 method: 'POST',
                 headers: {
                         'Content-Type': 'application/json',
@@ -95,8 +95,8 @@ deleteBlogPost.addEventListener('click', (event) => {
                 blogId = event.target.id;                                  //how did you know this would derive the id? is it the objec property of the div? 
                 console.log(blogId)
 
-                fetch(`/api/v1/blog/${blogId}`, {
-                // fetch(`${API}api/v1/blog/${blogId}`, {
+                // fetch(`/api/v1/blog/${blogId}`, {
+                fetch(`${API}api/v1/blog/${blogId}`, {
                         method: 'DELETE',
                 })
                         .then((response) => {

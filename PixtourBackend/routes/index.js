@@ -1,7 +1,8 @@
 module.exports = {
         blog: require('./blogPostRoutes'),
         comment: require('./commentPostRoutes'),
-        views: require('./views')
+        views: require('./views'),
+        auth: require("./auth")
 }
 
 
